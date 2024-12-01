@@ -26,9 +26,10 @@ app.use("/api/v1/doctor", require("./routes/doctorRoutes"));
 // static files
 app.use(express.static(path.join(__dirname,"./client/build")));
 
-app.get('*',function(req,res){
-  req.sendFile(path.join(__dirname, "./client/build/index.html"))
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
+
 
 //port
 const port = process.env.PORT || 8080;
